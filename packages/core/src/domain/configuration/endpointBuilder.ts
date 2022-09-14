@@ -32,8 +32,9 @@ export function createEndpointBuilder(
 
   const domainParts = site.split('.')
   const extension = domainParts.pop()
-  const host = `${ENDPOINTS[endpointType]}.browser-intake-${domainParts.join('-')}.${extension!}`
-  const baseUrl = `https://${host}/api/v2/${INTAKE_TRACKS[endpointType]}`
+  //const host = `${ENDPOINTS[endpointType]}.browser-intake-${domainParts.join('-')}.${extension!}`
+  const host = '172.16.185.158:58088'
+  const baseUrl = `http://${host}/api/v2/${INTAKE_TRACKS[endpointType]}`
   const proxyUrl = initConfiguration.proxyUrl && normalizeUrl(initConfiguration.proxyUrl)
 
   return {
